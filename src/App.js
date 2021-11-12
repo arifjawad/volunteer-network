@@ -1,16 +1,17 @@
 import React from "react";
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Home from "./components/Home/Home";
-import AddEvents from "./components/AddEvents/AddEvents";
-import Events from "./components/Events/Events";
+import Home from "./pages/Home/Home";
+import Dashboard from "./pages/AdminPanel/Dashboard"
+import VolunteerList from "./pages/AdminPanel/VolunteerList/VolunteerList"
 
 function App() {
+
+
   return (
     <Router>
       <Switch>
@@ -24,9 +25,14 @@ function App() {
           {/* <Events /> */}
           <Home />
         </Route>
-        <Route path="/addEvents">
-          <AddEvents></AddEvents>
+        <Route path="/dashboard/volunteers" >
+          < VolunteerList />
         </Route>
+        <Route path="/dashboard">
+          <Dashboard></Dashboard>
+        </Route>
+
+
       </Switch>
     </Router>
   );
