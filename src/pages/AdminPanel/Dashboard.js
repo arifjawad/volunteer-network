@@ -6,13 +6,17 @@ const Dashboard = () => {
 
     return (
         <>
-            <section className="col-span-2">
-                <div className="bg-gray-200">
-                    <SideNav></SideNav>
-                </div>
+            <section className="container">
+                <div className="flex flex-wrap">
 
-                <div className="">
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum natus sed necessitatibus rem, dicta maxime?</h1>
+                    <div className="w-full flex-1">
+                        <SideNav></SideNav>
+                    </div>
+
+                    <div className="mt-20 flex-1">
+                        <h1 className="text-center font-bold text-4xl border-b-2 p-3">Dashboard</h1>
+                    </div>
+
                 </div>
             </section>
         </>

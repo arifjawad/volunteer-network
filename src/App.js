@@ -2,7 +2,7 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route, Redirect
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Events from "./pages/Events/Events";
@@ -37,8 +37,11 @@ function App() {
           <AddEvents />
         </Route>
         <Route exact path="/dashboard/settings">
-          <Notfound />
+          <Redirect from='/dashboard/settings' to='/404' />
         </Route>
+
+        <Route path='/404' component={Notfound} />
+        <Redirect from='*' to='/404' />
       </Switch>
     </Router>
   );
