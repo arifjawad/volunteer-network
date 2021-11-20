@@ -10,9 +10,9 @@ import Dashboard from "./pages/AdminPanel/Dashboard"
 import VolunteerList from "./pages/AdminPanel/VolunteerList/VolunteerList"
 import AddEvents from "./pages/AdminPanel/AddEvents/AddEvents";
 import Notfound from "./pages/Notfound/Notfound";
+import ViewEvents from './pages/AdminPanel/ViewEvents/ViewEvents';
 
 function App() {
-
 
   return (
     <Router>
@@ -36,6 +36,10 @@ function App() {
         <Route exact path="/dashboard/add-events">
           <AddEvents />
         </Route>
+        <Route exact path="/dashboard/view-events" component={ViewEvents}>
+
+        </Route>
+
         <Route exact path="/dashboard/settings">
           <Redirect from='/dashboard/settings' to='/404' />
         </Route>

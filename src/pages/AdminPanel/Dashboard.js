@@ -9,7 +9,7 @@ const Dashboard = () => {
             <section className="container">
                 <div className="flex flex-wrap">
 
-                    <div className="w-full flex-1">
+                    <div className="flex-1">
                         <SideNav></SideNav>
                     </div>
 

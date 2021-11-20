@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import Events from '../../Events/Events';
 import SideNav from '../PanelSections/SideNav';
 
 const axios = require('axios').default;
@@ -70,6 +71,8 @@ const AddEvents = () => {
                     </div>
                 </div>
             </section>
+
+
 
 
         </>

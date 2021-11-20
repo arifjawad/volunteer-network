@@ -7,6 +7,7 @@ import {
 const Notfound = () => {
     const history = useHistory();
 
+
     return (
         <>
             <div className="container px-4 mt-80 ml-52 flex flex-auto ">

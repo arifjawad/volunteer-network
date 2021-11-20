@@ -4,7 +4,7 @@ import Card from '../../components/Card/Card';
 const Events = () => {
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5055/events')
+        fetch('https://volunteers-network-server.herokuapp.com/events')
             .then(res => res.json())
             .then(data => setEvents(data))
 
