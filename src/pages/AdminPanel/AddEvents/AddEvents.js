@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import Events from '../../Events/Events';
 import SideNav from '../PanelSections/SideNav';
+import TextareaAutosize from 'react-textarea-autosize';
 
 const axios = require('axios').default;
 
@@ -13,9 +13,10 @@ const AddEvents = () => {
 
         const eventData = {
             eventName: data.eventName,
+            eventDescription: data.eventDescription,
             imageUrl: imgURL
         };
-        const url = `http://localhost:5055/addEvents`;
+        const url = `https://volunteers-network-server.herokuapp.com/addEvents`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -36,7 +37,7 @@ const AddEvents = () => {
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then((res) => {
                 setImgURL(res.data.data.display_url);
-
+                console.log(res.data.data.display_url)
 
             }).catch((error) => {
                 console.log(error);
@@ -57,6 +58,13 @@ const AddEvents = () => {
                             <div className="mb-3 mt-3 pt-0 flex flex-auto">
                                 <p className="mb-3 w-2/6">Event Name :</p>
                                 <input type="text" name="eventName" placeholder="type here" className="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative  bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full"  {...register("eventName")} />
+                            </div>
+                            <div className="mb-3 mt-3 pt-0 flex flex-auto">
+                                <p className="mb-3 w-2/6">Description:</p>
+
+                                <textarea
+                                    type="text" name="eventDescription" placeholder="type here" className="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative  bg-white rounded text-sm border border-blueGray-300 outline-none focus:outline-none focus:shadow-outline w-full"  {...register("eventDescription")}
+                                />
                             </div>
                             <br />
                             <div className="mb-3 mt-3 pt-0 flex flex-auto justify-between">
